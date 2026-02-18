@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             password: passwordController.text.trim()
                         ),
                       );
-                    },
+                    }, text: 'Sign in',
                   ),
                 ],
               ),

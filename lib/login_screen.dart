@@ -1,5 +1,6 @@
 import 'package:bloc_login_form_app/bloc/auth_bloc.dart';
 import 'package:bloc_login_form_app/widgets/gradient_button.dart';
+import 'package:bloc_login_form_app/widgets/home_screen.dart';
 import 'package:bloc_login_form_app/widgets/login_field.dart';
 import 'package:bloc_login_form_app/widgets/social_button.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,14 @@ class _LoginScreenState extends State<LoginScreen> {
               SnackBar(
                 content: Text(state.error),
               ),
+            );
+          } if (state is AuthSuccess) {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeScreen(),
+              ),
+              (route) => false
             );
           }
         },
